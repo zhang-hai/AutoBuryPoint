@@ -1,0 +1,2 @@
+# AutoBuryPoint
+android 通过自定义gradle插件，在apk打包过程中使用ASM对class文件进行字节码插桩，实现自动埋点技术
