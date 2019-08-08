@@ -44,11 +44,19 @@ dependencies {
 
 ### 3.项目中使用
 ##### 1.注解FastClickIntercept，拦截防按钮重复点击
-该注解作用的method上，并且该method的要有一个View参数，否则不会插入拦截字节码。
+该注解作用的method上，并且该method的要有一个View参数，否则不会插入拦截字节码。支持设置重复时间，默认为500毫秒。
+同一按钮的点击时间都为重复点击，不做任何操作
 ```
 @FastClickIntercept
 @Override
 public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+    ...
+}
+
+//指定间隔时间为1000毫秒，即1000毫秒内同一按钮的点击时间都为重复点击，不做任何操作
+@FastClickIntercept(intervalTime = 1000)
+@Override
+public void onClick(View view) {
     ...
 }
 ```
